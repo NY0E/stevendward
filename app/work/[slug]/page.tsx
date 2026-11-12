@@ -49,24 +49,44 @@ export default function CaseStudyPage({
         </div>
       </dl>
 
-      <div className="mt-10 max-w-prose space-y-4 text-lg leading-relaxed">
-        <p className="text-graphite">
-          Full case study in progress: the problem, the learners, the design
-          decisions, and what happened.
-        </p>
-        {project.liveUrl && (
-          <p>
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-underline font-medium"
-            >
-              Try it live
-            </a>
+      {project.caseStudy ? (
+        <div className="mt-10 max-w-prose space-y-10">
+          {project.caseStudy.map((section) => (
+            <section key={section.heading}>
+              <h2 className="font-mono text-xs uppercase tracking-widest text-ballpoint">
+                {section.heading}
+              </h2>
+              <div className="mt-3 space-y-4 text-lg leading-relaxed">
+                {section.body.map((paragraph, i) => (
+                  <p key={i} className="text-graphite">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      ) : (
+        <div className="mt-10 max-w-prose space-y-4 text-lg leading-relaxed">
+          <p className="text-graphite">
+            Full case study in progress: the problem, the learners, the design
+            decisions, and what happened.
           </p>
-        )}
-      </div>
+        </div>
+      )}
+
+      {project.liveUrl && (
+        <p className="mt-10">
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-underline font-medium"
+          >
+            Try it live
+          </a>
+        </p>
+      )}
 
       <p className="mt-16">
         <Link href="/work" className="link-underline text-sm">
