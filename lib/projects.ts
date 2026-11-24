@@ -66,6 +66,56 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "flare",
+    code: "CRT 140",
+    title: "Flare",
+    oneLiner:
+      "An AI scam checker for older adults: text it a screenshot, get the red flags it spots with plain-language reasons and next steps. The design point is that it never does the thinking for you.",
+    audience: "Older adults and their families",
+    format: "iMessage, SMS, and Messenger bots; guardrail-first prompt design with an output safety net",
+    featured: true,
+    caseStudy: [
+      {
+        heading: "The problem",
+        body: [
+          "The moment of doubt in a scam text always hits when nobody's around to ask. My family was getting these texts and calls constantly, and the standard advice (never click, just call your bank) doesn't survive contact with a real 9pm group text.",
+        ],
+      },
+      {
+        heading: "What I built, by directing AI",
+        body: [
+          "A scam checker you text: send a screenshot of a suspicious message to a bot on iMessage, SMS, or Messenger, and it answers in under a minute with every red flag it spots, a one-line reason for each, and at most three steps to take.",
+          "Three thin platform adapters share one brain: a rules prompt that defines every reply, and a safety net that inspects the model's output (flag count, off-topic redirects, leaked reasoning) before anything reaches the user. A reply that fails inspection becomes a graceful fallback, never the raw model.",
+        ],
+      },
+      {
+        heading: "Guardrails",
+        body: [
+          "It never labels a message a scam; that judgment stays with the person reading it. It never repeats a phone number from the suspicious message back (a classic scammer move to \"helpfully\" confirm it). It never asks for codes or passwords. It never gives an all-clear on anything involving money, even with zero red flags.",
+          "Prompt-injection probes are part of the test suite, and the model's own reasoning is stripped so leaked chain-of-thought can never reach a user.",
+        ],
+      },
+      {
+        heading: "How I measured it",
+        body: [
+          "A repeatable test suite of known scam and legit samples plus injection probes. Twelve-sample baseline run: zero unsafe answers. Every live check is logged, so unsafe patterns can be audited after the fact.",
+        ],
+      },
+      {
+        heading: "What happened",
+        body: [
+          "Built and live-tested end to end; in private testing now, with the pilot opening to small groups first.",
+        ],
+      },
+      {
+        heading: "What I'd do next",
+        body: [
+          "Open it to local senior groups around Kansas City, grow the sample library from real flagged messages, and publish the pattern guides the scam-text log is already collecting.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "agent-infrastructure",
     code: "CS 260",
     title: "Agent Infrastructure",
@@ -185,6 +235,17 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    slug: "kc-events-engine",
+    code: "ENB 220",
+    title: "KC Events Engine",
+    oneLiner:
+      "A scraper that keeps an auto-updating Kansas City events feed for my short-term rental: pulls real dates and venues from local sources, geocodes them, and filters by how far a guest is willing to drive.",
+    audience: "Short-stay guests deciding what to do tonight",
+    format: "Scheduled Python scraper, JSON-LD, static hosting at basekc.com/events",
+    liveUrl: "https://basekc.com/events",
+    featured: true,
+  },
+  {
     slug: "truth-sleuths",
     code: "CRT 150",
     title: "Truth Sleuths",
@@ -197,12 +258,12 @@ export const projects: Project[] = [
   {
     slug: "dadtechpov",
     code: "MED 300",
-    title: "DadTechPOV",
+    title: "Fireside Techie",
     oneLiner:
       "A YouTube channel breaking down real technical projects for a general audience: networking, radio, smart home, and the occasional glorious failure.",
     audience: "Curious general audience",
     format: "Video, long-form and shorts",
-    liveUrl: "https://www.youtube.com/@DadTechPOV",
+    liveUrl: "https://www.youtube.com/@firesidetechie",
     featured: false,
   },
 ];
