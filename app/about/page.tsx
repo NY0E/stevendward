@@ -124,7 +124,7 @@ export default function AboutPage() {
 
       <section className="mt-16" aria-labelledby="colleagues">
         <h2 id="colleagues" className="eyebrow mb-6">
-          What colleagues have said
+          What past colleagues have said
         </h2>
         <div className="max-w-prose divide-y divide-rule border-y border-rule">
           {quotes.map((q) => (
