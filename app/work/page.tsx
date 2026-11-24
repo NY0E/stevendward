@@ -37,16 +37,34 @@ export default function WorkPage() {
           .sort((a, b) => courseNumber(a.code) - courseNumber(b.code));
         if (rows.length === 0) return null;
         return (
-          <section key={d.prefix} className="mt-12" aria-labelledby={`dept-${d.prefix}`}>
-            <h2 id={`dept-${d.prefix}`} className="eyebrow mb-2">
-              {d.prefix} &middot; {d.label}
-            </h2>
-            <div>
+          <details
+            key={d.prefix}
+            open
+            className="group mt-10 border-b border-rule pb-2"
+          >
+            <summary className="flex cursor-pointer list-none items-center gap-3 [&::-webkit-details-marker]:hidden">
+              <h2
+                id={`dept-${d.prefix}`}
+                className="eyebrow transition-colors group-hover:text-ballpoint"
+              >
+                {d.prefix} &middot; {d.label}
+              </h2>
+              <span className="font-mono text-xs text-graphite">
+                {rows.length}
+              </span>
+              <span
+                aria-hidden
+                className="ml-auto text-graphite transition-transform group-open:rotate-90"
+              >
+                ▸
+              </span>
+            </summary>
+            <div className="mt-2">
               {rows.map((p) => (
                 <CatalogRow key={p.slug} project={p} />
               ))}
             </div>
-          </section>
+          </details>
         );
       })}
     </div>

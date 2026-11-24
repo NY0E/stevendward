@@ -17,26 +17,30 @@ export default function HomePage() {
     <div className="mx-auto max-w-site px-6">
       {/* Hero */}
       <section className="py-20 sm:py-28">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/steve.jpg"
-          alt="Steve Ward"
-          width={96}
-          height={96}
-          className="mb-6 h-24 w-24 rounded-full border border-rule object-cover"
-          style={{ objectPosition: "center 25%" }}
-        />
-        <p className="eyebrow">Steve Ward · Kansas City, MO</p>
-        <h1 className="mt-5 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl sm:leading-tight">
-          I build <span className="mark-hilite">learning systems</span> that
-          teach people hard things.
-        </h1>
-        <p className="mt-6 max-w-prose text-lg leading-relaxed text-graphite">
-          Fifteen years teaching at universities and training rooms across two
-          continents, now applied to healthcare IT by day and AI-powered
-          learning tools by night. I design the whole stack: the curriculum,
-          the product, and the code.
-        </p>
+        <div className="grid gap-8 sm:grid-cols-[9rem_1fr] sm:gap-10">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/steve.jpg"
+            alt="Steve Ward"
+            width={144}
+            height={144}
+            className="h-36 w-36 rounded-full border border-rule object-cover"
+            style={{ objectPosition: "center 25%" }}
+          />
+          <div>
+            <p className="eyebrow">Steve Ward · Kansas City, MO</p>
+            <h1 className="mt-5 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl sm:leading-tight">
+              I build <span className="mark-hilite">learning systems</span>{" "}
+              that teach people hard things.
+            </h1>
+            <p className="mt-6 max-w-prose text-lg leading-relaxed text-graphite">
+              Fifteen years teaching at universities and training rooms across
+              two continents, now applied to healthcare IT by day and
+              AI-powered learning tools by night. I design the whole stack:
+              the curriculum, the product, and the code.
+            </p>
+          </div>
+        </div>
         <div className="mt-8">
           <Link href="/work" className="link-underline font-medium">
             Browse the course catalog
