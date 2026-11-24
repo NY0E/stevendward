@@ -77,9 +77,11 @@ export default function AboutPage() {
         <p>
           Outside of work, I build and ship{" "}
           <span className="mark-hilite">AI-powered learning tools</span>. My
-          NY0E suite helps aspiring amateur radio operators earn their licenses
-          through Socratic AI tutoring, Morse code training, and exam prep
-          apps I designed, coded, and deployed end to end.
+          Ready line of apps helps amateur radio operators: QRZReady preps them
+          for the FCC license exams, CWReady teaches Morse code as sounds
+          instead of dots and dashes, and NATOReady drills the phonetic
+          alphabet until it becomes reflex. I designed, coded, and deployed
+          each one end to end.
         </p>
         <p>
           I also teach on camera. On{" "}

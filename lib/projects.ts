@@ -214,15 +214,47 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "ny0e-suite",
-    code: "LRN 401",
-    title: "NY0E Learning Suite",
+    slug: "housekeeping-checklist",
+    code: "STR 230",
+    title: "Housekeeping Turnover Checklist",
     oneLiner:
-      "A multi-app learning ecosystem that takes aspiring amateur radio operators from first question to licensed, including an AI tutor that refuses to just give away the answers.",
+      "A bilingual turnover checklist for the duplex cleaning crew: unit-specific room-by-room tasks, photo capture in every room, and a comment thread on each item, so the standards live in the app instead of in a pile of text messages.",
+    audience: "Cleaning crews working in English or Spanish",
+    format: "Single-file web app, EN/ES toggle, photo capture, per-item comment threads",
+    featured: false,
+  },
+  {
+    slug: "qrzready",
+    code: "LRN 401",
+    title: "QRZReady",
+    oneLiner:
+      "Exam prep for FCC amateur radio licenses built around recall instead of recognition: adaptive ten-question sessions, a distractor system that widens as mastery grows, and question banks for all three license classes.",
     audience: "Adult learners preparing for FCC license exams",
-    format: "Web apps: AI Socratic tutor, Morse trainer, exam prep",
-    liveUrl: "https://elmer.ny0e.com",
+    format: "Next.js web app, Firebase auth, Supabase study logging",
+    liveUrl: "https://qrzready.com",
     featured: true,
+  },
+  {
+    slug: "cwready",
+    code: "LRN 402",
+    title: "CWReady",
+    oneLiner:
+      "A Morse code trainer that teaches sounds instead of dots and dashes: Koch method progression, Farnsworth spacing, and a callsign-first drill, because the plateau most learners hit comes from counting symbols they should be hearing.",
+    audience: "Hams learning Morse code for on-air operation",
+    format: "Web app: audio drills, progress tracking, prosign and Q-code reference",
+    liveUrl: "https://cwready.com",
+    featured: false,
+  },
+  {
+    slug: "natoready",
+    code: "LRN 403",
+    title: "NATOReady",
+    oneLiner:
+      "Phonetic alphabet drills that build reflexive recall: letter to word, word to letter, and full callsign spelling. Knowing the alphabet and using it on the air are different things; this one trains the second.",
+    audience: "Newly licensed radio operators",
+    format: "Web app: timed drills, quick reference",
+    liveUrl: "https://natoready.com",
+    featured: false,
   },
   {
     slug: "guest-guidebook",

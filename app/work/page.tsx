@@ -39,7 +39,6 @@ export default function WorkPage() {
         return (
           <details
             key={d.prefix}
-            open
             className="group mt-10 border-b border-rule pb-2"
           >
             <summary className="flex cursor-pointer list-none items-center gap-3 [&::-webkit-details-marker]:hidden">
