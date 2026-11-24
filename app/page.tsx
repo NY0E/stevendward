@@ -17,16 +17,7 @@ export default function HomePage() {
     <div className="mx-auto max-w-site px-6">
       {/* Hero */}
       <section className="py-20 sm:py-28">
-        <div className="grid gap-8 sm:grid-cols-[9rem_1fr] sm:gap-10">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/steve.jpg"
-            alt="Steve Ward"
-            width={144}
-            height={144}
-            className="h-36 w-36 rounded-full border border-rule object-cover"
-            style={{ objectPosition: "center 25%" }}
-          />
+        <div className="grid gap-8 sm:grid-cols-[1fr_9rem] sm:gap-10">
           <div>
             <p className="eyebrow">Steve Ward · Kansas City, MO</p>
             <h1 className="mt-5 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl sm:leading-tight">
@@ -40,6 +31,15 @@ export default function HomePage() {
               the curriculum, the product, and the code.
             </p>
           </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/steve.jpg"
+            alt="Steve Ward"
+            width={144}
+            height={144}
+            className="order-first h-36 w-36 justify-self-start rounded-full border border-rule object-cover sm:order-none sm:justify-self-end"
+            style={{ objectPosition: "center 25%" }}
+          />
         </div>
         <div className="mt-8">
           <Link href="/work" className="link-underline font-medium">
