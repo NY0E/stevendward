@@ -218,7 +218,7 @@ export const projects: Project[] = [
     code: "STR 230",
     title: "Housekeeping Turnover Checklist",
     oneLiner:
-      "A bilingual turnover checklist for the duplex cleaning crew: unit-specific room-by-room tasks, photo capture in every room, and a comment thread on each item, so the standards live in the app instead of in a pile of text messages.",
+      "A bilingual turnover checklist for the duplex cleaning crew: unit-specific room-by-room tasks, photo capture, and a comment thread on every item. The crew used it a few times, then taught me the real constraint: at turnover speed, the app has to be faster than habit, and this one wasn't there yet.",
     audience: "Cleaning crews working in English or Spanish",
     format: "Single-file web app, EN/ES toggle, photo capture, per-item comment threads",
     featured: false,
