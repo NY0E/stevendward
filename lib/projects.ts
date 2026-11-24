@@ -21,7 +21,7 @@ export const projects: Project[] = [
     code: "CS 250",
     title: "Accent Coach",
     oneLiner:
-      "Clinical pronunciation scoring for a second-language nurse: voice drills in, phoneme-level scores out, coaching feedback in between. Consumer dictation tools erase accents by design; this pipeline measures where speech actually differs.",
+      "Clinical pronunciation scoring for a nurse for whom English is her second language: voice drills in, phoneme-level scores out, coaching feedback in between. Consumer dictation tools erase accents by design; this pipeline measures where speech actually differs.",
     audience: "A working RN whose first language is Korean",
     format: "Telegram voice pipeline, Azure Speech scoring, AI coaching layer",
     featured: true,
