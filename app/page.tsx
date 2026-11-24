@@ -17,6 +17,15 @@ export default function HomePage() {
     <div className="mx-auto max-w-site px-6">
       {/* Hero */}
       <section className="py-20 sm:py-28">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/steve.jpg"
+          alt="Steve Ward"
+          width={96}
+          height={96}
+          className="mb-6 h-24 w-24 rounded-full border border-rule object-cover"
+          style={{ objectPosition: "center 25%" }}
+        />
         <p className="eyebrow">Steve Ward · Kansas City, MO</p>
         <h1 className="mt-5 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl sm:leading-tight">
           I build <span className="mark-hilite">learning systems</span> that

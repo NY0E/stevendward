@@ -8,6 +8,17 @@ export const metadata: Metadata = {
     "Learning systems, enablement tools, and technical education projects by Steve Ward.",
 };
 
+const departments: { prefix: string; label: string }[] = [
+  { prefix: "CS", label: "Agents & software" },
+  { prefix: "LRN", label: "Learning systems" },
+  { prefix: "STR", label: "Short-term rental tools" },
+  { prefix: "MED", label: "Media" },
+];
+
+function courseNumber(code: string): number {
+  return parseInt(code.split(" ")[1] ?? "0", 10) || 0;
+}
+
 export default function WorkPage() {
   return (
     <div className="mx-auto max-w-site px-6 py-16 sm:py-20">
@@ -20,11 +31,24 @@ export default function WorkPage() {
         and build the system that makes it learnable.
       </p>
 
-      <div className="mt-12">
-        {projects.map((p) => (
-          <CatalogRow key={p.slug} project={p} />
-        ))}
-      </div>
+      {departments.map((d) => {
+        const rows = projects
+          .filter((p) => p.code.startsWith(`${d.prefix} `))
+          .sort((a, b) => courseNumber(a.code) - courseNumber(b.code));
+        if (rows.length === 0) return null;
+        return (
+          <section key={d.prefix} className="mt-12" aria-labelledby={`dept-${d.prefix}`}>
+            <h2 id={`dept-${d.prefix}`} className="eyebrow mb-2">
+              {d.prefix} &middot; {d.label}
+            </h2>
+            <div>
+              {rows.map((p) => (
+                <CatalogRow key={p.slug} project={p} />
+              ))}
+            </div>
+          </section>
+        );
+      })}
     </div>
   );
 }

@@ -67,7 +67,7 @@ export const projects: Project[] = [
   },
   {
     slug: "flare",
-    code: "CRT 140",
+    code: "CS 140",
     title: "Flare",
     oneLiner:
       "An AI scam checker for older adults: text it a screenshot, get the red flags it spots with plain-language reasons and next steps. The design point is that it never does the thinking for you.",
@@ -226,7 +226,7 @@ export const projects: Project[] = [
   },
   {
     slug: "guest-guidebook",
-    code: "ENB 210",
+    code: "STR 210",
     title: "Guest Guidebook PWA",
     oneLiner:
       "A self-service guidebook for a two-unit hospitality operation that answers guest questions before they become 2am messages, with live weather and translation built in.",
@@ -236,7 +236,7 @@ export const projects: Project[] = [
   },
   {
     slug: "kc-events-engine",
-    code: "ENB 220",
+    code: "STR 220",
     title: "KC Events Engine",
     oneLiner:
       "A scraper that keeps an auto-updating Kansas City events feed for my short-term rental: pulls real dates and venues from local sources, geocodes them, and filters by how far a guest is willing to drive.",
@@ -247,7 +247,7 @@ export const projects: Project[] = [
   },
   {
     slug: "truth-sleuths",
-    code: "CRT 150",
+    code: "LRN 150",
     title: "Truth Sleuths",
     oneLiner:
       "A game that teaches kids to spot logical fallacies by playing, not by memorizing definitions.",
