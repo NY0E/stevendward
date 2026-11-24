@@ -1,5 +1,4 @@
 import Link from "next/link";
-import CatalogRow from "@/components/CatalogRow";
 import { projects } from "@/lib/projects";
 
 const credentials = [
@@ -10,14 +9,19 @@ const credentials = [
   "Oracle Cloud AI Foundations",
 ];
 
+function teaser(text: string): string {
+  const first = text.split(". ")[0];
+  return first.endsWith(".") ? first : `${first}.`;
+}
+
 export default function HomePage() {
-  const featured = projects.filter((p) => p.featured);
+  const picks = projects.filter((p) => p.caseStudy).slice(0, 3);
 
   return (
     <div className="mx-auto max-w-site px-6">
       {/* Hero */}
       <section className="py-20 sm:py-28">
-        <div className="grid gap-8 sm:grid-cols-[1fr_9rem] sm:gap-10">
+        <div className="grid gap-8 sm:grid-cols-[minmax(0,42rem)_auto] sm:gap-14">
           <div>
             <p className="eyebrow">Steve Ward · Kansas City, MO</p>
             <h1 className="mt-5 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl sm:leading-tight">
@@ -35,9 +39,9 @@ export default function HomePage() {
           <img
             src="/steve.jpg"
             alt="Steve Ward"
-            width={144}
-            height={144}
-            className="order-first h-36 w-36 justify-self-start rounded-full border border-rule object-cover sm:order-none sm:justify-self-end"
+            width={208}
+            height={208}
+            className="order-first h-40 w-40 rounded-full border border-rule object-cover sm:order-none sm:h-52 sm:w-52"
             style={{ objectPosition: "center 25%" }}
           />
         </div>
@@ -48,16 +52,48 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured work */}
+      {/* Selected work: a short teaser, not a rerun of the catalog */}
       <section aria-labelledby="selected-work">
         <h2 id="selected-work" className="eyebrow mb-2">
           Selected work
         </h2>
-        <div>
-          {featured.map((p) => (
-            <CatalogRow key={p.slug} project={p} />
+        <ul className="mt-4 border-y border-rule">
+          {picks.map((p) => (
+            <li key={p.slug} className="border-b border-rule last:border-b-0">
+              <Link
+                href={`/work/${p.slug}`}
+                className="group grid gap-1 py-5 sm:grid-cols-[7rem_1fr] sm:gap-4"
+              >
+                <span className="eyebrow pt-1">{p.code}</span>
+                <span>
+                  <span className="font-display text-xl font-semibold leading-snug transition-colors group-hover:text-ballpoint">
+                    {p.title}
+                  </span>
+                  <span className="mt-1 block max-w-prose text-graphite">
+                    {teaser(p.oneLiner)}
+                  </span>
+                </span>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
+        <Link
+          href="/work"
+          className="group mt-10 flex flex-wrap items-center justify-between gap-4 border-2 border-ink px-6 py-6 transition-colors hover:bg-hilite/40"
+        >
+          <span>
+            <span className="font-display text-xl font-semibold leading-snug">
+              {projects.length} projects in the full course catalog
+            </span>
+            <span className="mt-1 block max-w-prose text-graphite">
+              Agents &amp; software, learning systems, rental tools, media —
+              each one with the story of how it was built and what it taught.
+            </span>
+          </span>
+          <span className="font-mono text-xs uppercase tracking-[0.18em] text-ballpoint group-hover:underline">
+            Browse the catalog →
+          </span>
+        </Link>
       </section>
 
       {/* Proof strip */}
