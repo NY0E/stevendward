@@ -29,6 +29,25 @@ const credentials = [
   },
 ];
 
+const quotes = [
+  {
+    text: "Hi Steve. Great feedback from our end users! Thank you for your professionalism and commitment to customer service.",
+    source: "VP, End User Support",
+  },
+  {
+    text: "Just wanted to reach out and thank you for an excellent job keeping a very tough group happy. We appreciate the quality support.",
+    source: "Sr Director, IT",
+  },
+  {
+    text: "Just read your blog and wanted to tell you that it is very thorough and well written. I am saving it to forward to users. Thank you.",
+    source: "Sr Site Support Analyst",
+  },
+  {
+    text: "These guys love Steve! I'm sure you all see this, but I wanted to make sure. Big kudos to him. These guys are tough customers and he's doing a great job.",
+    source: "Assoc Dir, CIO Service Delivery Manager",
+  },
+];
+
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-site px-6 py-16 sm:py-20">
@@ -65,12 +84,12 @@ export default function AboutPage() {
         <p>
           I also teach on camera. On{" "}
           <a
-            href="https://www.youtube.com/@DadTechPOV"
+            href="https://www.youtube.com/@firesidetechie"
             target="_blank"
             rel="noopener noreferrer"
             className="link-underline"
           >
-            DadTechPOV
+            Fireside Techie
           </a>
           , I break down real technical projects in home networking, radio,
           and consumer tech for a general audience, because explaining
@@ -101,6 +120,24 @@ export default function AboutPage() {
             </div>
           ))}
         </dl>
+      </section>
+
+      <section className="mt-16" aria-labelledby="colleagues">
+        <h2 id="colleagues" className="eyebrow mb-6">
+          What colleagues have said
+        </h2>
+        <div className="max-w-prose divide-y divide-rule border-y border-rule">
+          {quotes.map((q) => (
+            <figure key={q.source} className="py-5">
+              <blockquote className="leading-relaxed">
+                &ldquo;{q.text}&rdquo;
+              </blockquote>
+              <figcaption className="mt-2 text-sm text-graphite">
+                {q.source}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
     </div>
   );

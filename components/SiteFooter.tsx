@@ -2,7 +2,7 @@ const links = [
   { href: "mailto:wardstevendavid@gmail.com", label: "Email" },
   { href: "https://www.linkedin.com/in/wardstevend", label: "LinkedIn" },
   { href: "https://github.com/NY0E", label: "GitHub" },
-  { href: "https://www.youtube.com/@DadTechPOV", label: "YouTube" },
+  { href: "https://www.youtube.com/@firesidetechie", label: "YouTube" },
 ];
 
 export default function SiteFooter() {
