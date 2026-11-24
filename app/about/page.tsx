@@ -62,7 +62,7 @@ export default function AboutPage() {
           For fifteen years that meant classrooms and training rooms: teaching
           political science at Chosun University in South Korea, coaching
           researchers on academic publishing, designing curriculum for programs
-          spanning two continents, and explaining how governments work on live
+          spanning three continents, and explaining how governments work on live
           radio. Teaching sharpened one skill above all others, which is
           meeting people where they are and building them a bridge to where
           they need to be.

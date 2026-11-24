@@ -29,8 +29,8 @@ export default function HomePage() {
               that teach people hard things.
             </h1>
             <p className="mt-6 max-w-prose text-lg leading-relaxed text-graphite">
-              Fifteen years teaching at universities and training rooms across
-              two continents, now applied to healthcare IT by day and
+              Fifteen years teaching at universities and training rooms around
+              the world, now applied to healthcare IT by day and
               AI-powered learning tools by night. I design the whole stack:
               the curriculum, the product, and the code.
             </p>
